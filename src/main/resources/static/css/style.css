@@ -359,3 +359,11 @@ a {
       .sticky-wrapper .shrink {
         padding-top: 30px !important;
         padding-bottom: 30px !important; } }
+
+.site-logo{
+  width:75px;
+}
+
+.navigator{
+  padding-left:80px;
+}

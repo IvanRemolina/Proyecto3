@@ -76,48 +76,50 @@
     <div class="container">
         <div class="row align-items-center position-relative">
             <div class="site-logo">
-                <!--<a th:href="@{/}" class="text-black"><img src="../imagenes/logo.png" width="75px" height="75px"></a>-->
+                <a th:href="@{/}" class="text-black"><img src="/images/logo.png" width="75px" height="75px"></a>
             </div>
             <div class="col-12">
-                <nav class="site-navigation text-right ml-auto" role="navigation">
-                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                        <li><a th:href="@{/}" class="nav-link">Inicio</a></li>
+                <div class="navigator">
+                    <nav class="site-navigation text-right ml-auto" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                            <li><a th:href="@{/}" class="nav-link">Inicio</a></li>
 
-                        <li class="has-children">
-                            <a href="#about-section" class="nav-link">Componentes</a>
-                            <ul class="dropdown arrow-top">
-                                <li><a th:href="@{/componentes/procesadores}" class="nav-link">Procesadores</a></li>
-                                <li><a th:href="@{/componentes/ram}" class="nav-link">Memorias RAM</a></li>
-                                <li><a th:href="@{/componentes/discos}" class="nav-link">Discos duros</a></li>
-                                <li><a th:href="@{/componentes/otros}" class="nav-link">Otros</a></li>
-                                <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
-                                    <a th:href="@{/componentes/nuevo}" class="nav-link">Añadir componente</a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="has-children">
+                                <a href="#about-section" class="nav-link">Componentes</a>
+                                <ul class="dropdown arrow-top">
+                                    <li><a th:href="@{/componentes/procesadores}" class="nav-link">Procesadores</a></li>
+                                    <li><a th:href="@{/componentes/ram}" class="nav-link">Memorias RAM</a></li>
+                                    <li><a th:href="@{/componentes/discos}" class="nav-link">Discos duros</a></li>
+                                    <li><a th:href="@{/componentes/otros}" class="nav-link">Otros</a></li>
+                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
+                                        <a th:href="@{/componentes/nuevo}" class="nav-link">Añadir componente</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                        <li class="has-children">
-                            <a th:href="@{/ordenadores}" class="nav-link">Ordenadores</a>
-                            <ul class="dropdown arrow-top">
-                                <li><a th:href="@{/ordenadores}" class="nav-link">Ver todos</a></li>
-                                <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
-                                    <a th:href="@{/ordenadores/nuevo}" class="nav-link">Añadir ordenador</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a th:href="@{/pedidos}" class="nav-link">Pedidos</a></li>
-                        <li class="nav-item nav-item--no-user" th:if="${session.usuario == null}">
-                            <a class="nav-link"  href="/auth/login"  role="button">Login</a>
+                            <li class="has-children">
+                                <a th:href="@{/ordenadores}" class="nav-link">Ordenadores</a>
+                                <ul class="dropdown arrow-top">
+                                    <li><a th:href="@{/ordenadores}" class="nav-link">Ver todos</a></li>
+                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
+                                        <a th:href="@{/ordenadores/nuevo}" class="nav-link">Añadir ordenador</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a th:href="@{/pedidos}" class="nav-link">Pedidos</a></li>
+                            <li class="nav-item nav-item--no-user" th:if="${session.usuario == null}">
+                                <a class="nav-link"  href="/auth/login"  role="button">Login</a>
 
-                            <a class="nav-link"  href="/auth/registro"  role="button">Registrarse</a>
-                        </li>
-                        <li class="nav-item nav-item--user" th:if="${session.usuario != null}">
-                            <a class="nav-link"  href="#">Bienvenido, <span th:text="${session.usuario.nombre}"></span></a>
-                            <a class="nav-link" th:if="${session.admin}" href="/admin">Panel de Administración</a>
-                            <a class="nav-link"  href="/auth/logout" role="button">Logout</a>
-                        </li>
-                    </ul>
-                </nav>
+                                <a class="nav-link"  href="/auth/registro"  role="button">Registrarse</a>
+                            </li>
+                            <li class="nav-item nav-item--user" th:if="${session.usuario != null}">
+                                <a class="nav-link"  href="#">Bienvenido, <span th:text="${session.usuario.nombre}"></span></a>
+                                <a class="nav-link" th:if="${session.admin}" href="/admin">Panel de Administración</a>
+                                <a class="nav-link"  href="/auth/logout" role="button">Logout</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
