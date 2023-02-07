@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container">
+  <div th:replace="fragments/header :: header"></div>
+
+
+  <div class="card-columns">
+    <div th:each="ordenadores : ${ordenadores}">
+      <img th:src="@{/imagenes/pc.png}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" th:text="${ordenadores.name}"></h5>
+        <p class="card-text" th:text="${ordenadores.description}"></p>
+        <p class="card-text">Precio: <span th:text="${ordenadores.price}"></span></p>
+        <a th:href="@{/ordenadores/editar/{id}(id=${ordenadores.id})}" class="btn btn-primary">Editar</a>
+        <a th:href="@{/ordenadores/borrar/{id}(id=${ordenadores.id})}" class="btn btn-danger">Borrar</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

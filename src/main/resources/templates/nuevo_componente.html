@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head :: head">
+  <style>
+    table{
+      table-layout: fixed;
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <div th:replace="fragments/header :: header"></div>
+
+  <h3>Añadir nuevo componente</h3>
+  <form class="needs-validation" action="#" th:action="@{/componentes/nuevo}" th:object="${componentes}" method="post">
+    <div class="mb-3">
+      <img src="img_girl.jpg" alt="Componente" width="500" height="600">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="name"
+             name="name"
+             th:value="${componentes.name}"
+             required>
+      <label class="form-label">Descripcion</label>
+      <input type="text" class="form-control" id="description"
+             name="description"
+             th:value="${componentes.description}"
+             required>
+      <label class="form-label">Precio</label>
+      <input type="text" class="form-control" id="price"
+             name="price"
+             th:value="${componentes.price == 0.0} ? '' : ${componentes.price}"
+             pattern="^[0-9]+([.][0-9]*)?|[.][0-9]+$"
+             required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg px-4">Guardar componente</button>
+  </form>
+
+
+</div>
+</body>
+</html>

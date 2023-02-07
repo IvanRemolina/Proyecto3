@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head :: head">
+  <style>
+    table{
+      table-layout: fixed;
+      width: 100%;
+    }
+    button{
+      float:right;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <div th:replace="fragments/header :: header"></div>
+
+  <h3>Añadir nuevo ordenador</h3>
+  <form class="needs-validation" action="#" th:action="@{/ordenadores/nuevo}" th:object="${ordenadores}" method="post">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img th:src="@{/imagenes/pc.png}" alt="Ordenador">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name"
+                 name="name"
+                 th:value="${ordenadores.name}"
+                 required>
+          <label class="form-label">Descripcion</label>
+          <input type="text" class="form-control" id="description"
+                 name="description"
+                 th:value="${ordenadores.description}"
+                 required>
+          <label class="form-label">Precio</label>
+          <input type="text" class="form-control" id="price"
+                 name="price"
+                 th:value="${ordenadores.price == 0.0} ? '' : ${ordenadores.price}"
+                 pattern="^[0-9]+([.][0-9]*)?|[.][0-9]+$"
+                 required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg px-4" style="float:right">Guardar ordenador</button>
+      </div>
+    </div>
+  </form>
+
+
+</div>
+</body>
+</html>
