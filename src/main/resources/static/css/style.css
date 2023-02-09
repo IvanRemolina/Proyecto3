@@ -367,3 +367,11 @@ a {
 .navigator{
   padding-left:80px;
 }
+
+#logout-button{
+  margin-top: 12px;
+  background:none;
+  border:none;
+  outline:none;
+  cursor:pointer
+}
