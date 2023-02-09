@@ -116,9 +116,7 @@
                                 <a class="nav-link"  href="#">Bienvenido, <span th:text="${session.usuario.nombre}"></span></a>
                                 <a class="nav-link" th:if="${session.admin}" href="/admin">Panel de Administración</a>
                             <li class="nav-item nav-item--user" th:if="${session.usuario != null}">
-                              <span>Hola,
-                                <span th:text="${session.usuario.nombre}"></span>
-                              </span>
+
                                 <form th:action="@{/logout}" method="POST">
                                     <button type="submit" class="nav-link" th:ref="/logout" tabindex="-1" aria-disabled="true">
                                         Logout
