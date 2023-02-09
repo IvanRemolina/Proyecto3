@@ -91,7 +91,7 @@
                                     <li><a th:href="@{/componentes/ram}" class="nav-link">Memorias RAM</a></li>
                                     <li><a th:href="@{/componentes/discos}" class="nav-link">Discos duros</a></li>
                                     <li><a th:href="@{/componentes/otros}" class="nav-link">Otros</a></li>
-                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
+                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'admin')}">
                                         <a th:href="@{/componentes/nuevo}" class="nav-link">Añadir componente</a>
                                     </li>
                                 </ul>
@@ -101,24 +101,26 @@
                                 <a th:href="@{/ordenadores}" class="nav-link">Ordenadores</a>
                                 <ul class="dropdown arrow-top">
                                     <li><a th:href="@{/ordenadores}" class="nav-link">Ver todos</a></li>
-                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'editor')}">
+                                    <li th:if="${session.usuario != null && (session.admin == true || session.role == 'admin')}">
                                         <a th:href="@{/ordenadores/nuevo}" class="nav-link">Añadir ordenador</a>
                                     </li>
                                 </ul>
                             </li>
                             <li><a th:href="@{/pedidos}" class="nav-link">Pedidos</a></li>
-                            <li class="nav-item nav-item--no-user" th:if="${session.usuario == null}">
+                            <li class="nav-item nav-item--no-user" th:if="${session.usuario == null}" style="float: right;">
                                 <a class="nav-link"  href="/auth/login"  role="button">Login</a>
 
                                 <a class="nav-link"  href="/auth/registro"  role="button">Registrarse</a>
                             </li>
-                            <li class="nav-item nav-item--user" th:if="${session.usuario != null}">
+                            <li class="nav-item nav-item--user" th:if="${session.usuario != null}" style="float: right;">
                                 <a class="nav-link"  href="#">Bienvenido, <span th:text="${session.usuario.nombre}"></span></a>
                                 <a class="nav-link" th:if="${session.admin}" href="/admin">Panel de Administración</a>
                             <li class="nav-item nav-item--user" th:if="${session.usuario != null}">
                               <span>Hola,
                                 <span th:text="${session.usuario.nombre}"></span>
                               </span>
+                            </li>
+                            <li class="nav-item nav-item--user" th:if="${session.usuario != null}" style="float: right;">
                                 <form th:action="@{/logout}" method="POST">
                                     <button type="submit" class="nav-link" th:ref="/logout" tabindex="-1" aria-disabled="true">
                                         Logout
