@@ -365,6 +365,31 @@ a {
 .navigator{
   padding-left:80px;
 }
+.card-columns{
+  width:250px;
+  flex-direction: row;
+  display: flex;
+}
+
+.card-columns img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-columns p{
+  word-wrap: break-word
+}
+
+.card-column{
+  width:250px;
+}
+
+.card-body-pc{
+  width: 250px;
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
 
 #logout-button{
   margin-top: 12px;

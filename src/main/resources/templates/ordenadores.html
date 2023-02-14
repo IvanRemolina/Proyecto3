@@ -7,12 +7,12 @@
 
 
   <div class="card-columns">
-    <div th:each="ordenadores : ${ordenadores}">
+    <div class="card-column" th:each="ordenadores : ${ordenadores}">
       <img th:src="@{/images/pc.png}" width="200px" height="200px" alt="...">
       <div class="card-body">
         <h5 class="card-title" th:text="${ordenadores.name}"></h5>
         <p class="card-text" th:text="${ordenadores.description}"></p>
-        <p class="card-text">Precio: <span th:text="${ordenadores.price}"></span></p>
+        <p class="card-text-price">Precio: <span th:text="${ordenadores.price}"></span></p>
         <a th:href="@{/ordenadores/editar/{id}(id=${ordenadores.id})}" class="btn btn-primary">Editar</a>
         <a th:href="@{/ordenadores/borrar/{id}(id=${ordenadores.id})}" class="btn btn-danger">Borrar</a>
       </div>
