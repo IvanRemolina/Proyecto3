@@ -21,6 +21,7 @@ private ComponentesService componentesService;
 public String home(Model model){
         Componentes componentes = new Componentes();
         model.addAttribute("componentes", componentes);
+        model.addAttribute("metaTitle", "Añadir componentes");
         return "nuevo_componente";
         }
 
@@ -31,5 +32,5 @@ public String create(@Valid @ModelAttribute Componentes componentes, BindingResu
         }
         componentesService.create(componentes);
         return "redirect:/componentes/nuevo";
-        }
-        }
+    }
+}
