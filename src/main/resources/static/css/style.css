@@ -338,8 +338,6 @@ a {
     background: #fff; }
     .sticky-wrapper .site-navbar .site-logo a {
       color: #fff; }
-    .sticky-wrapper .site-navbar ul li a {
-      color: rgba(255, 255, 255, 0.7) !important; }
       .sticky-wrapper .site-navbar ul li a.active {
         color: #fff !important; }
   .sticky-wrapper.is-sticky .site-navbar {

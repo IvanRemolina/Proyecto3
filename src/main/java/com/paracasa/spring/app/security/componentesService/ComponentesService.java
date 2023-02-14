@@ -4,9 +4,10 @@ package com.paracasa.spring.app.security.componentesService;
 import com.paracasa.spring.app.model.Componentes;
 import com.paracasa.spring.app.repository.ComponentesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class ComponentesService implements IComponentesService {
 
     @Autowired
